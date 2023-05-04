@@ -1,0 +1,8 @@
+mixin title(title, icon)
+  .title
+    h3
+      if icon
+          span
+            i.fa(class=icon)
+      span #{title}
+    div.keyline

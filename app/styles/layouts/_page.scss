@@ -5,10 +5,22 @@
   display: block;
   margin: 0 auto;
   border-top: 10px solid $primary-color;
-  padding: 36px 22px 30px 34px;
+  padding: 20px 12px 12px 12px;
+  //-webkit-print-color-adjust: exact;
   @include shadow();
   @include clearfix();
 }
+
+//@page {
+//    size:A4 landscape;
+//    margin-left: 0px;
+//    margin-right: 0px;
+//    margin-top: 0px;
+//    margin-bottom: 0px;
+//    margin: 0;
+//    -webkit-print-color-adjust: exact;
+//}
+
 
 .left-column {
   float: left;

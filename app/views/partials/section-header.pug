@@ -1,0 +1,25 @@
+mixin section-header(website, name, startDate, endDate, icon, subhead)
+  .section-header.clearfix
+    if name
+      .pull-left(style="display: flex; align-items: center;")
+        if icon
+          div.section_icon
+            img(src=icon)
+        span.section_text
+          h3.bold.section_title
+            if website
+              a(href=website, target="_blank")
+                | #{name}
+                i.fa.fa-arrow-up-right-from-square(aria-hidden="true")
+            else
+              | #{name}
+          h4.section_subtitle
+            | #{subhead}
+    h5.italic.pull-right(style="margin-top: 8px;")
+      if startDate
+        span.startDate #{startDate}
+        if endDate
+          span.endDate
+            |  - #{endDate}
+        else
+          span.endDate  - Present

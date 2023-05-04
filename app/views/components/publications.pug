@@ -1,0 +1,11 @@
+if resume.publications.length
+  .container.publications-container
+    +title("Publications")
+    each pub in resume.publications
+      section.item
+        +section-header(pub.name)
+        if pub.publisher
+          h5.awarder #{pub.publisher}
+        if pub.summary
+          p.summary #{pub.summary}
+e

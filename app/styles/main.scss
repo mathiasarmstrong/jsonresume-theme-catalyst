@@ -16,3 +16,37 @@
 @import 'components/info-tag';
 @import 'components/references';
 @import 'components/education';
+@import 'components/skill-bars';
+@import 'components/goodreads-overrides';
+
+span.stars_container {
+  span.stars_span {
+    margin-bottom: 34px;
+    margin-left: 6px;
+
+    span.star {
+      margin: 1px;
+
+    }
+  }
+}
+
+.section-header {
+  .section_icon {
+    margin-right: 15px;
+    img {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  .section_text {
+    .section_title {
+
+    }
+
+    .section_subtitle {
+
+    }
+  }
+}

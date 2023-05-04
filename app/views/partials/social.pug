@@ -1,0 +1,3 @@
+mixin social(network, username, url)
+  if network && username
+    +info-tag(url, 'fa-brands fa-' + network, username)

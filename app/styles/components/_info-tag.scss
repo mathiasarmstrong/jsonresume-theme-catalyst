@@ -1,5 +1,5 @@
 .info-tag-container {
-  margin-bottom: spacing(1);
+  //margin-bottom: spacing(1);
 
   .fa {
     @include font-size(3.5);
@@ -24,15 +24,18 @@
       @include font-size(2.75);
     }
 
-    &.fa-external-link {
-      width: auto;
-      font-size: inherit;
-      vertical-align: text-top;
-    }
+    //&.fa-arrow-up-right-from-square {
+    //  width: auto;
+    //  font-size: inherit;
+    //  vertical-align: text-top;
+    //  @media print {
+    //    display: none !important;
+    //  }
+    //}
   }
 
   .info-text {
-    @include font-size(2.25);
+    @include font-size(2.50);
     display: inline-block;
     vertical-align: middle;
     width: $aside-width - $aside-margin - 1;

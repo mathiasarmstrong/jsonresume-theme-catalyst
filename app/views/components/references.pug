@@ -1,0 +1,10 @@
+if resume.references.length
+  .container.references-container
+    +title("References", 'fa-light fa-quote-left')
+    each ref in resume.references
+      section.item.clearfix
+        if ref.reference
+          i.fa.fa-quote-left.pull-left(aria-hidden="true")
+          blockquote #{ref.reference}
+        if ref.name
+          h5.pull-right — #{ref.name}

@@ -1,0 +1,17 @@
+if resume.education.length
+  .container.education-container
+    +title("Education", 'fa-light fa-graduation-cap')
+    each edu in resume.education
+      section.item
+        // website, name, startDate, endDate, icon, subhead
+        +section-header(null, edu.institution, edu.startDate, edu.endDate, edu.icon, edu.studyType + ' | ' + edu.area)
+        if edu.location
+          h5.location #{edu.location}
+        if edu.gpa
+          h5 #{edu.gpa}
+        if edu.specialization
+          h5.specialization #{edu.specialization}
+        if edu.courses.length
+          ul.two-column
+            each course in edu.courses
+              li #{course}

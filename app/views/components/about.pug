@@ -1,0 +1,14 @@
+if resume.basics
+  .container.about-container
+    +title('About', 'fa-regular fa-address-card')
+    if location
+      +info-tag(url, icon, resume.basics.location.state)
+    if resume.basics.email
+      +info-tag('mailto:' + resume.basics.email, "fa-regular fa-envelope", resume.basics.email)
+    if resume.basics.phone
+      +info-tag(null, "fa-light fa-mobile-screen", resume.basics.phone)
+    if resume.basics.website
+      +info-tag(resume.basics.website, "fa-light fa-desktop", removeProtocol(resume.basics.website))
+    if resume.basics.profiles
+      each profile in resume.basics.profiles
+        +social(profile.network, profile.username, profile.url)

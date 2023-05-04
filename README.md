@@ -1,10 +1,22 @@
-# jsonresume-theme-caffeine ![](https://travis-ci.org/kelyvin/jsonresume-theme-caffeine.svg?branch=master) [![npm version](https://badge.fury.io/js/jsonresume-theme-caffeine.svg)](https://www.npmjs.com/package/jsonresume-theme-caffeine)
+# jsonresume-theme-catalyst
 
-This is the Caffeine theme repository for the [Json Resume](https://jsonresume.org/) project. Unlike the [json-theme-boilerplate](https://github.com/jsonresume/jsonresume-theme-boilerplate) project, this environment has a much improved developer environment to make editing your theme super easy to do.
+This is the Catalyst theme repository for the [Json Resume](https://jsonresume.org/) project. Unlike the [json-theme-boilerplate](https://github.com/jsonresume/jsonresume-theme-boilerplate) project, this environment has a much improved developer environment to make editing your theme super easy to do.
 
-> Recently upgraded to v2, which simplifies the development environment, uses `yarn` over `npm`, no longer requires global installs, and updates `resume-cli` v2 (since v3 is still not stable).
+This is not fully compatible with the other tools this was forked from.  It generates PDF and html correctly for printing
+a more traditional resume while creating it with HTML + CSS/SASS.  Should be reintegrated with the other tools at some 
+point though.
 
-![Richard Hendriks Reume](http://i.imgur.com/yktvc8m.png)
+> I recently forked this, it's not quiet fully compatible with resume-cli or resumed or [jsonresume-theme-boilerplate](https://github.com/jsonresume/jsonresume-theme-boilerplate)
+> - updated the package.json to use the latest versions of many dependencies
+> - move from commonjs to es6 modules
+>   - this is what might have broke resume-cli compatibility
+>   - (and, i have no intention of addressing this immediately)
+> - Implemented pupputeer for PDF generation
+> - [ ] fix backgroundPrinting issues in PDF
+> - [ ] reimplement components
+> - [ ] pdf hot reloading
+
+![Richard Hendriks Resume](http://i.imgur.com/yktvc8m.png)
 
 ## Table of Contents
 
@@ -39,21 +51,12 @@ This theme environment comes equipped with the following features to make your d
 - Integration with [resume-cli](https://github.com/jsonresume/resume-cli) so you can still run the same commands against this project.
 
 ## Getting Started
-If you prefer to run the CLI commands locally, you can install the following packages globally (but it is not required):
-```bash
-npm install -g resume-cli gulp-cli
-```
-
-When building the project for the very first time, run the following command to install all of your packages.
 
 ```bash
+# install deps
 yarn install
-```
-
-## Running
-To run the project, simply run the following command
-```bash
-npm start
+# run it with hot reload
+yarn dev
 ```
 
 Running the command above will automatically build your project, load your resume with the theme, listen for changes, and automatically refresh the browser on file changes. A `resume.json` will be created for you by default against the `resume-sample.json` if you do not provide a `resume.json` at the root directory level.
@@ -82,7 +85,7 @@ git update-index --no-assume-unchanged resume.json
 ```
 
 ## Building the project
-When you run `npm start` or choose to manually build the project using `gulp`, it will generate a `/public` folder. This folder will be created after running the appropritae gulp tasks against the `/app` folder. Essentially, the app folder is your development environment and the public folder will be what we deploy to production. The public folder is exactly the same as the public folder generated from the jsonresume-theme-boilerplate, thus, our `index.js` will still run agianst this folder.
+When you run `yarn build` or choose to manually build the project using `gulp`, it will generate a `/public` folder. This folder will be created after running the appropritae gulp tasks against the `/app` folder. Essentially, the app folder is your development environment and the public folder will be what we deploy to production. The public folder is exactly the same as the public folder generated from the jsonresume-theme-boilerplate, thus, our `index.ts` will still run agianst this folder.
 
 ## Exporting your resume
 To export your resume, you can run the following command below. This will automatically create a `resume.pdf` file within your current directory:
@@ -142,7 +145,7 @@ $primary-color          : $slate-green;
 ```
 
 ## Developer Environment
-The most important pieces of this environment are the two `app` and `gulp` folders as well as `index.js`. If you've already read through the [jsonresume-theme-boilerplate](https://github.com/jsonresume/jsonresume-theme-boilerplate), you should know what the files within `/app` and `index.js` represents.
+The most important pieces of this environment are the two `app` and `gulp` folders as well as `index.ts`. If you've already read through the [jsonresume-theme-boilerplate](https://github.com/jsonresume/jsonresume-theme-boilerplate), you should know what the files within `/app` and `index.ts` represents.
 
 #### /app
 The app folder holds all of your assets. The file system should be straightforward to follow. All views will be under the `/views`  folder. Most importantantly, this folder which contains `resume.hbs`, which is the main Handlebars template that will be used and sent to the theme server to render your resume. The  `/styles` folder contains all of your SASS stylesheets.
@@ -150,5 +153,5 @@ The app folder holds all of your assets. The file system should be straightforwa
 #### /gulp
 The gulp folder holds all the modularized gulp tasks/configs. Anything gulp related should go here. Please reference `gulpfile.js` as the source of truth.
 
-#### index.js
+#### index.ts
 This is the file that will return the HTML to the theme server and run against the resume-cli. Not much change here from the jsonresume-theme-boilerplate except that it has been modified to accomodate this file system.
