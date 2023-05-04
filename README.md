@@ -6,24 +6,25 @@ This is not fully compatible with the other tools this was forked from.  It gene
 a more traditional resume while creating it with HTML + CSS/SASS.  Should be reintegrated with the other tools at some 
 point though.
 
-> I recently forked this, it's not quiet fully compatible with resume-cli or resumed or [jsonresume-theme-boilerplate](https://github.com/jsonresume/jsonresume-theme-boilerplate)
-> - updated the package.json to use the latest versions of many dependencies
-> - move from commonjs to es6 modules
->   - this is what might have broke resume-cli compatibility
->   - (and, i have no intention of addressing this immediately)
-> - Implemented pupputeer for PDF generation
-> - [ ] fix backgroundPrinting issues in PDF
-> - [ ] reimplement components
-> - [ ] pdf hot reloading
+- updated to es6 modules
+- converted handlebars to pug
+- fix/implemented browsersync live reload
+- rewrote entire build system
+  - no longer utilizes resume-cli for anything
+  - i would like to reintegrate with resume-cli at some point for backwards compatibility
+- pruned unused dependencies from package.json
 
 ![Richard Hendriks Resume](http://i.imgur.com/yktvc8m.png)
+
+## Status
+
+- [ ] fix the resume-sample loading when no assets are loaded
 
 ## Table of Contents
 
 * [Installation](#installation)
 * [Features](#features)
 * [Getting Started](#getting-started)
-* [Running](#running)
 * [Theme Overrides](#theme-overrides)
     * [Icons](#icons)
     * [About](#about)
@@ -31,15 +32,14 @@ point though.
 * [Developer Environment](#developer-environment)
 * [Creating your resume.json](#creating-your-resumejson)
 * [Building the project](#building-the-project)
-* [Exporting your resume](#exporting-your-resume)
 ## Installation
-This project uses [gulp](http://gulpjs.com/) and [resume-cli](https://github.com/jsonresume/resume-cli) for all of its internal build processes. In theory, this project requires minimum a of `Node v8.2+` & `NPM v5.2` to run, but it is recommended to use `Node v12+`.
+This project uses [gulp](http://gulpjs.com/) for all of its internal build processes.
 
 ## Quick Commands
-- `npm start` - Run the build and generate a resume html page for development
-- `npm run export` - Exports the resume into a `resume.pdf` file
-
-To run any default resume-cli commands, simply run all resume-cli commands against `npx resume`.
+- `yarn dev` 
+  - Run the build and generate a resume html page for development, also generates the pdf
+- `yarn build` 
+  - Exports the resume into a `resume.pdf` file and to an html file
 
 ## Features
 This theme environment comes equipped with the following features to make your development environment easier:
@@ -48,7 +48,7 @@ This theme environment comes equipped with the following features to make your d
 - **Sass** and **Handlebars** support to give you the full capabilties of the system and make it easier for you to build your own custom theme.
 - **Auto watch** for file changes and automatically recompile your core assets.
 - A modular file system.
-- Integration with [resume-cli](https://github.com/jsonresume/resume-cli) so you can still run the same commands against this project.
+- (WIP) Re-integration with [resume-cli](https://github.com/jsonresume/resume-cli) so you can still run the same commands against this project.
 
 ## Getting Started
 
@@ -73,26 +73,10 @@ It is highly **recommended** to create your own `resume.json` for your own resum
 
 Please review the [schema here](https://jsonresume.org/schema/) when creating your `resume.json`.
 
-### Ignoring changes in resume.json
-If you want to modify the theme but don't necessarily want to propogate the changes made in resume.json, you can easily untrack that file by running the following command:
-```
-git update-index --assume-unchanged resume.json
-```
-
-If you want to track the file again, you can run:
-```
-git update-index --no-assume-unchanged resume.json
-```
 
 ## Building the project
 When you run `yarn build` or choose to manually build the project using `gulp`, it will generate a `/public` folder. This folder will be created after running the appropritae gulp tasks against the `/app` folder. Essentially, the app folder is your development environment and the public folder will be what we deploy to production. The public folder is exactly the same as the public folder generated from the jsonresume-theme-boilerplate, thus, our `index.ts` will still run agianst this folder.
 
-## Exporting your resume
-To export your resume, you can run the following command below. This will automatically create a `resume.pdf` file within your current directory:
-
-```
-npm run export
-```
 
 Alternatively, you can also do a **print page** on the browser and save it as as PDF (by setting margins to none and removing header/footers.)
 
