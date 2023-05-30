@@ -12,5 +12,5 @@ if resume.skills.length
               h5 #{skill.name}
               if skill.keywords && skill.keywords.length
                 div
-                  each keyword in skill.keywords
-                    .w3-tag.w3-tiny.w3-blue-gray #{keyword}
+                  each keyword in staggerSort(skill.keywords)
+                    .w3-tag.w3-tiny(style=`order ${keyword.length}`) #{keyword}

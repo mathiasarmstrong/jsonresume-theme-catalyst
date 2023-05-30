@@ -8,11 +8,9 @@ $gray-light             : #ddd;
 $gray-lighter           : #eee;
 $gray-lightest          : #f8f8f8;
 
-$slate-gray             : #39424B;
-$slate-green            : #56817A;
 
-$primary-color          : $slate-green;
-$secondary-color        : $slate-gray;
+$primary-color          : #436d66;
+$secondary-color        : #39424B;
 
 $link-color             : #2895F1;
 
@@ -34,8 +32,15 @@ $laptop-width           : 992px;
 $desktop-width          : 1200px;
 $retina-width           : 1920px;
 
-$font-unit              : 4px;
+$font-unit              : 4.2px;
 $profile-pic-size        : 75px;
 $aside-width            : 180px;
 $aside-margin           : 20px;
 $pad-unit               : 5px;
+
+.w3-tag {
+  background-color: #436d66 !important;
+  font-weight: bold !important;
+  font-size: 10px !important;
+  color: $gray-lightest !important;
+}

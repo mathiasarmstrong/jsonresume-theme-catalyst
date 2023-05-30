@@ -18,6 +18,8 @@ point though.
 
 ## Status
 
+[See my example live](https://r.knowledgedump.space)
+
 - [ ] fix the resume-sample loading when no assets are loaded
 
 ## Table of Contents
@@ -41,11 +43,16 @@ This project uses [gulp](http://gulpjs.com/) for all of its internal build proce
 - `yarn build` 
   - Exports the resume into a `resume.pdf` file and to an html file
 
+## Printing
+  
+You can print form either the PDF or the HTML file.  You might also want to tweak some of the scale features in the 
+printing dialog to get the best results. (i.e., 96% scale works well for me.)
+
 ## Features
 This theme environment comes equipped with the following features to make your development environment easier:
 
 - **Gulp** task management integration, so you can build out your ideal development environment.
-- **Sass** and **Handlebars** support to give you the full capabilties of the system and make it easier for you to build your own custom theme.
+- **Sass** and **Pug** support to give you the full capabilties of the system and make it easier for you to build your own custom theme.
 - **Auto watch** for file changes and automatically recompile your core assets.
 - A modular file system.
 - (WIP) Re-integration with [resume-cli](https://github.com/jsonresume/resume-cli) so you can still run the same commands against this project.
@@ -76,7 +83,6 @@ Please review the [schema here](https://jsonresume.org/schema/) when creating yo
 
 ## Building the project
 When you run `yarn build` or choose to manually build the project using `gulp`, it will generate a `/public` folder. This folder will be created after running the appropritae gulp tasks against the `/app` folder. Essentially, the app folder is your development environment and the public folder will be what we deploy to production. The public folder is exactly the same as the public folder generated from the jsonresume-theme-boilerplate, thus, our `index.ts` will still run agianst this folder.
-
 
 Alternatively, you can also do a **print page** on the browser and save it as as PDF (by setting margins to none and removing header/footers.)
 
@@ -135,7 +141,7 @@ The most important pieces of this environment are the two `app` and `gulp` folde
 The app folder holds all of your assets. The file system should be straightforward to follow. All views will be under the `/views`  folder. Most importantantly, this folder which contains `resume.hbs`, which is the main Handlebars template that will be used and sent to the theme server to render your resume. The  `/styles` folder contains all of your SASS stylesheets.
 
 #### /gulp
-The gulp folder holds all the modularized gulp tasks/configs. Anything gulp related should go here. Please reference `gulpfile.js` as the source of truth.
+The gulp folder holds all the modularized gulp tasks/configs. Anything gulp related should go here. Please reference `gulpfile.xs` as the source of truth.
 
 #### index.ts
 This is the file that will return the HTML to the theme server and run against the resume-cli. Not much change here from the jsonresume-theme-boilerplate except that it has been modified to accomodate this file system.

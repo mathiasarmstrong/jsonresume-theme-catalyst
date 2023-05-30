@@ -1,5 +1,5 @@
 .container {
-  padding-top: spacing(4);
+  padding-top: spacing(1);
 }
 
 .keyline {
@@ -20,7 +20,7 @@
   @include clearfix();
 }
 
-.profile-pic {
+.header_pic {
   margin-top: -15px;
   margin-right: 10px;
 

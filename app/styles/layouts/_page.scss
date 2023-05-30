@@ -5,6 +5,7 @@
   display: block;
   margin: 0 auto;
   border-top: 10px solid $primary-color;
+  // top, right, bottom, left.
   padding: 20px 12px 12px 12px;
   //-webkit-print-color-adjust: exact;
   @include shadow();

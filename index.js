@@ -13,6 +13,8 @@ const pugOptions = {
 // resume-cli backwards compatibility
 export const render = (resume, compiler = pug) => {
 
+  // TODO: at some point i want to convert this pug to a basic react component.  The react.renderToHtml (or some such)
+  // method will be used here.
   return compiler.compile(resumeTemplate, pugOptions)({
     resume: resume,
     formatDate: formatDate
