@@ -1,7 +1,7 @@
 .page {
   background: white;
-  width: $page-width;
-  min-height: $page-height;
+  width: $page-width * 1.3;
+  min-height: $page-height * 1.3;
   display: block;
   margin: 0 auto;
   border-top: 10px solid $primary-color;
@@ -36,7 +36,7 @@
 }
 
 .item {
-  margin-bottom: spacing(3);
+  margin-bottom: spacing(1);
 
   &:last-child {
     margin-bottom: 0;

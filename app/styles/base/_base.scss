@@ -8,7 +8,7 @@ body {
   background: $gray-lightest;
   //background: black;
   //margin: 50px 0 100px;
-  letter-spacing: .3px;
+  letter-spacing: .5px;
   color: $secondary-color;
 }
 
@@ -25,7 +25,7 @@ h1 {
   @include josefin(700);
   @include font-size(6);
   letter-spacing: 1px;
-  margin-bottom: spacing(1);
+  //margin-bottom: spacing(1);
 }
 
 h2 {
@@ -98,11 +98,11 @@ em {
 }
 
 ul {
-  margin: spacing(1) 0 0;
-  -webkit-padding-start: spacing(3);
+  //margin: spacing(1) 0 0;
+  -webkit-padding-start: spacing(4);
 
   li {
-    padding-left: spacing(1);
+    //padding-left: spacing(.5);
   }
 
   &.minimal {
@@ -117,9 +117,9 @@ ul {
 
   &.two-column {
     -webkit-column-count: 2;
-    -webkit-column-gap: spacing(3.6);
+    -webkit-column-gap: spacing(2);
     column-count: 2;
-    column-gap: spacing(3.6);
+    column-gap: spacing(2);
 
     li {
       padding-left: 0;
@@ -130,7 +130,7 @@ ul {
 .title {
   h3 {
     i {
-      margin-right: 4px;
+      margin-right: spacing(1.5);
     }
   }
 }

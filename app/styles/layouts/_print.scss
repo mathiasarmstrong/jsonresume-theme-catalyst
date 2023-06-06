@@ -33,18 +33,19 @@
   .fa-arrow-up-right-from-square {
     display: none !important;
   }
-}
 
-@media print {
-  .section-header.clearfix {
+  // This makes the section headers collapse to 1 line instead of two lines
+  .section-header {
     span.section_text {
       h3.section_title {
-        //border: 1px solid red;
         display: inline-block;
       }
 
       h4.section_subtitle {
-        //border: 1px solid red;
+        &::before {
+          content: " | ";
+        }
+
         display: inline-block;
       }
     }
@@ -53,5 +54,4 @@
       margin-top: 0 !important;
     }
   }
-
 }
