@@ -11,7 +11,6 @@ export const htmlToPdf = async () =>
       await page.goto("file://" + file.path);
       await page._client().send('Animation.setPlaybackRate', { playbackRate: 5 });
 
-            // await page.screenshot({ path: path.basename(file.basename, ".html") + ".png" });
       // https://pptr.dev/api/puppeteer.pdfoptions
       await page.pdf({
         path: 'public/' + path.basename(file.basename, ".html") + ".pdf",
@@ -19,12 +18,22 @@ export const htmlToPdf = async () =>
         // omitBackground: true,
         format: 'Letter'
       });
+
+      //  I also want a png for my own use, this is embedded into my portfolio site as the link
+      await page.setViewport({
+        width: 612,
+        height: 800,
+        deviceScaleFactor: .85,
+      });
+      await page.screenshot({ path: 'public/' + path.basename(file.basename, ".html") + ".png" });
+
       await browser.close();
       resolve();
     }))
     .on('error', reject))
 
 
+//
 gulp.task('pdf', htmlToPdf);
 
 export default htmlToPdf;

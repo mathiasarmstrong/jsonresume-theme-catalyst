@@ -3,9 +3,9 @@ import ts from 'gulp-typescript';
 import sourcemaps from 'gulp-sourcemaps';
 
 // TODO: move this into the current folder
-const tsProject = ts.createProject('../../tsconfig.json',{
+const tsProject = ts.createProject('tsconfig.json',{
   // declaration: true,
-  output: 'resume.js'
+  // output: 'resume.js'
 });
 
 export const compileTypescript = () => {

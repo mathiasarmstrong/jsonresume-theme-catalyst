@@ -8,7 +8,9 @@
   }
 }
 
-.gr_custom_container_1682570986 {
+[class^="gr_custom_container"] {
+  //margin-bottom: 1rem;
+
   /* customize your Goodreads widget container here*/
   //border: 1px solid gray;
   //border-radius: 10px;
@@ -21,8 +23,8 @@
   justify-content: center;
 }
 
-.gr_custom_header_1682570986 {
-  //flex-grow: ;
+[class^="gr_custom_header"] {
+    //flex-grow: ;
   /* customize your Goodreads header here*/
   //border-bottom: 1px solid gray;
   //width: 100%;
@@ -31,7 +33,8 @@
   //font-size: 80%
 }
 
-.gr_custom_each_container_1682570986 {
+
+[class^="gr_custom_each_container"] {
   display: inline;
   /* customize each individual book container here */
   //width: 100%;
@@ -42,7 +45,7 @@
   //border-bottom: 1px solid #aaa;
 }
 
-.gr_custom_book_container_1682570986 {
+[class^="gr_custom_book_container"] {
   display: inline;
   /* customize your book covers here */
   //overflow: hidden;
