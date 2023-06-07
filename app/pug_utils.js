@@ -1,5 +1,5 @@
 //  Rename this to gulp-utils
-
+import tinycolor from 'tinycolor';
 import {DateTime} from "luxon";
 
 export const formatDate = date => DateTime.fromFormat(date, 'MM/YYYY');
@@ -26,8 +26,8 @@ export const groupLangByFluency = (languages) => {
 }
 
 export const SKILL_RANK_FLUENCY_MAPPING = ['Legacy', 'Adept', 'Experimenting', 'Advanced', 'Expert']
-export const SKILL_COLOR_RANK_MAPPING = ['#5bc0eb', '#5bc0eb', '#8f2d56', '#c4412a', '#ffb400']
-// export const SKILL_COLOR_RANK_MAPPING = ['#6c5b61', '#6c5b61', '#476873', '#436D66', '#325a53']
+// export const SKILL_COLOR_RANK_MAPPING = ['#5bc0eb', '#5bc0eb', '#8f2d56', '#c4412a', '#ffb400']
+export const SKILL_COLOR_RANK_MAPPING = ['#252d2b', '#364e4a', '#407970', '#48aa99', '#48aa99']
 
 export const getFluencyRanking = fluencyLevel => SKILL_RANK_FLUENCY_MAPPING.map(
     (a) => a.toLowerCase()
@@ -61,12 +61,4 @@ export const staggerSort = (arr) => {
   console.log(staggered);
 
   return staggered
-}
-
-// The ideal method would be to not even serve this data... but for now we will do this.
-export const hidePrivateData = () => {
-const privateData = document.querySelectorAll('.pii')
-  privateData.forEach(el => {
-    el.style.visibility = 'hidden';
-  })
 }

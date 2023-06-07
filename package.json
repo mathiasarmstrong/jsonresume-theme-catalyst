@@ -19,7 +19,8 @@
   "scripts": {
     "dev": "yarn gulp dev",
     "test": "jest",
-    "build": "yarn gulp build"
+    "build": "yarn gulp build",
+    "clean": "yarn gulp clean"
   },
   "devDependencies": {
     "@types/gulp": "^4.0.10",
@@ -48,6 +49,7 @@
     "pug": "^3.0.2",
     "puppeteer": "^19.11.1",
     "resume-cli": "2.2.4",
-    "sass": "^1.62.0"
+    "sass": "^1.62.0",
+    "tinycolor": "^0.0.1"
   }
 }

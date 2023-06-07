@@ -1,6 +1,6 @@
 import fs from 'fs'
 import pug from 'pug';
-import { formatDate } from './app/utils';
+import { formatDate } from './app/pug_utils.js';
 
 let publicDir = __dirname + '/public',
   resumeTemplate = fs.readFileSync('app/views/index.pug', 'utf-8');

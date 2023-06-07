@@ -3,8 +3,7 @@ import fs from 'fs';
 import gulpPug from 'gulp-pug';
 import gulpSize from 'gulp-size';
 import plumber from "gulp-plumber";
-import * as utils from '../app/utils.js';
-import pdf from "./pdf.js";
+import * as utils from '../app/pug_utils.js';
 import * as YAML from "yaml";
 
 export const resume = async () => {
@@ -54,7 +53,7 @@ export const resume = async () => {
       .on('error', reject);
   })
 };
-
-gulp.task('resume', gulp.series(resume));
+//  NOTE If we do PDF here that will delay the reload of the HTML, which is a bit undesirable
+gulp.task('resume', resume);
 
 export default resume

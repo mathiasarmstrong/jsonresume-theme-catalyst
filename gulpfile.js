@@ -20,9 +20,9 @@ const watch = () => {
     [
       'app/views/**/*.pug',
       (process.env.CATALYST_RESUME_ASSETS_DIR + '/data/resume.yml') || 'resume-assets/data/resume.yml',
-      'app/utils.js'
+      'app/pug_utils.js'
     ],
-    gulp.series(tasks.resume, gulp.parallel(tasks.pdf, reload))
+    gulp.series(tasks.resume, tasks.pdf, reload)
   );
   gulp.watch('app/**/*.ts', gulp.series(tasks.typescript, reload));
 };
