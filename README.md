@@ -10,17 +10,9 @@ This was originally forked from [kelyvin/jsonresume-theme-caffeine](https://gith
 5. removed support for resume-cli and resumed (for now)
 6. pruned unused dependencies from package.json
 
-(This needs to be updated a bit so it's not my resume linked here)
-![Sample Resume](https://r.knowledgedump.space/resume.png)
+![Sample Resume](./public/resume.png)
 
 ## Status
-
-[See my example live](https://r.knowledgedump.space)
-
-### TODO
-- [ ] fix the resume-sample loading when no assets are loaded
-  - [ ] generate the sample photos from this
-  - [ ] get sample image assets
 
 ### Table of Contents
 
