@@ -5,25 +5,38 @@ import gulpSize from 'gulp-size';
 import plumber from "gulp-plumber";
 import * as utils from '../app/pug_utils.js';
 import * as YAML from "yaml";
+// import memo from 'lodash';
+
+const resumePathWithinAssetsDir =  '/data/resume.yml';
+
+const getResumeYmlPath = () => {
+  if (process.env.CATALYST_RESUME_ASSETS_DIR
+      && fs.existsSync(process.env.CATALYST_RESUME_ASSETS_DIR + resumePathWithinAssetsDir)
+  ){
+    return process.env.CATALYST_RESUME_ASSETS_DIR + resumePathWithinAssetsDir
+  } else {
+    return `./resume-assets${resumePathWithinAssetsDir}`
+  }
+}
+
+export const resumePath = getResumeYmlPath();
+
+const getResumeData = (path) => {
+  const file = fs.readFileSync(path, "utf8")
+  return YAML.parse(file);
+}
 
 export const resume = async () => {
-  let fileData, resume;
+
+  const resumePath = getResumeYmlPath();
 
   console.log("**************************************")
   console.log("Resume ENV Variables")
-  console.log(`CATALYST_RESUME_ASSETS_DIR: ${process.env.CATALYST_RESUME_ASSETS_DIR || 'resume-assets/'}`)
+  console.log(`CATALYST_RESUME_ASSETS_DIR: ${process.env.CATALYST_RESUME_ASSETS_DIR || 'NOT SET'}`)
+  console.log(`USING RESUME.YML FROM: ${resumePath}`)
   console.log("**************************************")
 
-  // TODO: make this work for both yaml|yml and json
-  if (fs.existsSync(process.env.CATALYST_RESUME_ASSETS_DIR + '/data/resume.yml' || 'resume-assets/data/resume.yml')) {
-    console.log("Using resume.yml")
-    fileData = fs.readFileSync(process.env.CATALYST_RESUME_ASSETS_DIR + '/data/resume.yml' || 'resume-assets/data/resume.yml', 'utf8')
-    resume = YAML.parse(fileData);
-  } else {
-    console.log("Using resume-sample.json")
-    fileData = fs.readFileSync('resume-assets/data/resume-sample.yml')
-    resume = YAML.parse(fileData);
-  }
+  const resume = getResumeData(getResumeYmlPath());
 
   return new Promise((resolve, reject) => {
     gulp.src('./app/views/*.pug')

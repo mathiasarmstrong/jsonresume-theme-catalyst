@@ -2,6 +2,10 @@ import gulp from 'gulp'
 import browserSync from 'browser-sync';
 import tasks from './gulp/index.js';
 
+
+import { resumePath } from './gulp/resume.js'
+import { imagesPath } from './gulp/images.js'
+
 const bs = browserSync.create("resume");
 
 // @ts-ignore
@@ -12,14 +16,14 @@ const reload = done => {
 
 const watch = () => {
   gulp.watch(
-    (process.env.CATALYST_RESUME_ASSETS_DIR + '/images/**/*') || 'resume-assets/images/**/*',
+    imagesPath,
     gulp.series(tasks.images, gulp.parallel(tasks.pdf, reload))
   );
   gulp.watch('app/styles/**/*.scss', gulp.series(tasks.styles, gulp.parallel(tasks.pdf, reload)));
   gulp.watch(
     [
       'app/views/**/*.pug',
-      (process.env.CATALYST_RESUME_ASSETS_DIR + '/data/resume.yml') || 'resume-assets/data/resume.yml',
+      resumePath,
       'app/pug_utils.js'
     ],
     gulp.series(tasks.resume, tasks.pdf, reload)

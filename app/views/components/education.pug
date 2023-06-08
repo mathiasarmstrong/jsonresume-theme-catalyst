@@ -1,4 +1,4 @@
-if resume.education.length
+if resume.education && resume.education.length
   .container.education-container
     +title("Education", 'fa-light fa-graduation-cap')
     each edu in resume.education

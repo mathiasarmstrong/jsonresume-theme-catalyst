@@ -42,5 +42,5 @@ gulp
 app
 
 # Keep your personal resume.json private
-resume-assets/data/resume-sample.yml
+resume-assets/data/resume.yml
 resume_*.json

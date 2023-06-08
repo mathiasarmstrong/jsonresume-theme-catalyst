@@ -9,7 +9,7 @@ export const htmlToPdf = async () =>
       const browser = await puppeteer.launch({headless: "new"});
       const page = await browser.newPage();
       await page.goto("file://" + file.path);
-      await page._client().send('Animation.setPlaybackRate', { playbackRate: 5 });
+      await page._client().send('Animation.setPlaybackRate', { playbackRate: 1000 });
 
       // https://pptr.dev/api/puppeteer.pdfoptions
       await page.pdf({
@@ -19,13 +19,7 @@ export const htmlToPdf = async () =>
         format: 'Letter'
       });
 
-      //  I also want a png for my own use, this is embedded into my portfolio site as the link
-      await page.setViewport({
-        width: 612,
-        height: 800,
-        deviceScaleFactor: .85,
-      });
-      await page.screenshot({ path: 'public/' + path.basename(file.basename, ".html") + ".png" });
+      await page.screenshot({ path: 'public/' + path.basename(file.basename, ".html") + ".png", fullPage: true});
 
       await browser.close();
       resolve();
