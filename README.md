@@ -2,27 +2,27 @@
 
 This is the Catalyst theme repository for the [Json Resume](https://jsonresume.org/) project. Unlike the [json-theme-boilerplate](https://github.com/jsonresume/jsonresume-theme-boilerplate) project, this environment has a much improved developer environment to make editing your theme super easy to do.
 
-This is not fully compatible with the other tools this was forked from.  It generates PDF and html correctly for printing
-a more traditional resume while creating it with HTML + CSS/SASS.  Should be reintegrated with the other tools at some 
-point though.
+This was originally forked from [kelyvin/jsonresume-theme-caffeine](https://github.com/kelyvin/jsonresume-theme-caffeine) and I did a few major changes ontop of the base fork.
+1. updated to es6 module syntax
+2. converted handlebars to pug (roadmap is to convert to react)
+3. rebuilt many of hte gulp tasks to use the newer gulp 4 syntax and also fix the live reload and dev enviroment.
+4. allow hosting resume assets outside of this repository.
+5. removed support for resume-cli and resumed (for now)
+6. pruned unused dependencies from package.json
 
-- updated to es6 modules
-- converted handlebars to pug
-- fix/implemented browsersync live reload
-- rewrote entire build system
-  - no longer utilizes resume-cli for anything
-  - i would like to reintegrate with resume-cli at some point for backwards compatibility
-- pruned unused dependencies from package.json
-
-![Richard Hendriks Resume](http://i.imgur.com/yktvc8m.png)
+(This needs to be updated a bit so it's not my resume linked here)
+![Sample Resume](https://r.knowledgedump.space/resume.png)
 
 ## Status
 
 [See my example live](https://r.knowledgedump.space)
 
+### TODO
 - [ ] fix the resume-sample loading when no assets are loaded
+  - [ ] generate the sample photos from this
+  - [ ] get sample image assets
 
-## Table of Contents
+### Table of Contents
 
 * [Installation](#installation)
 * [Features](#features)
@@ -42,10 +42,13 @@ This project uses [gulp](http://gulpjs.com/) for all of its internal build proce
   - Run the build and generate a resume html page for development, also generates the pdf
 - `yarn build` 
   - Exports the resume into a `resume.pdf` file and to an html file
+- `yarn clean`
+  - clean the output folders 
+- `yarn test`
 
 ## Printing
   
-You can print form either the PDF or the HTML file.  You might also want to tweak some of the scale features in the 
+This resume was painstakingly created to print very nicely.  You can print form either the PDF or the HTML file there are minor differences between the two of these methods.  Furthermore, you might also want to tweak some of the scale features in the 
 printing dialog to get the best results. (i.e., 96% scale works well for me.)
 
 ## Features
@@ -69,25 +72,17 @@ yarn dev
 Running the command above will automatically build your project, load your resume with the theme, listen for changes, and automatically refresh the browser on file changes. A `resume.json` will be created for you by default against the `resume-sample.json` if you do not provide a `resume.json` at the root directory level.
 
 ## Creating your resume.json
-This project comes with `resume-sample.json`, which is a sample json resume you can build from. If you don't create a `resume.json` file, it will automatically be created against the `resume-sample.json` file.
 
-It is highly **recommended** to create your own `resume.json` for your own resume. If you create a `resume.json`, this will automatically be used by the app instead. In addition, this file is automatically ignored from GIT to ensure you cannot check it in (since most likely you'll have very personal information on there). If you do decide that you want to check it in, you can simply comment the following line in `.gitignore` like so:
+- [ ] this section needs to be worked on.  The resume-assets folder is a sample fodler of the resume assets.  Change as necessary.  Also worth noting instead of JSON i am using YAML because i like it better for this purpose.
 
-```
-# Keep your personal resume.json private
-# resume.json
-```
-
+(also update this as I have added a bit of an extended syntax to json resume)
 Please review the [schema here](https://jsonresume.org/schema/) when creating your `resume.json`.
 
 
 ## Building the project
-When you run `yarn build` or choose to manually build the project using `gulp`, it will generate a `/public` folder. This folder will be created after running the appropritae gulp tasks against the `/app` folder. Essentially, the app folder is your development environment and the public folder will be what we deploy to production. The public folder is exactly the same as the public folder generated from the jsonresume-theme-boilerplate, thus, our `index.ts` will still run agianst this folder.
+When you run `yarn build` or choose to manually build the project using `gulp`, it will generate a `/public` folder. This folder will be created after running the appropritae gulp tasks against the `/app` folder. Essentially, the app folder is your development environment and the public folder will be what we deploy to production. The public folder is exactly the same as the public folder generated from the jsonresume-theme-boilerplate, thus, our `index.js` will still run against this folder. (this is for re-integration with resumecli)
 
 Alternatively, you can also do a **print page** on the browser and save it as as PDF (by setting margins to none and removing header/footers.)
-
-## Theme Overrides
-The theme provides will automatically render certain styles and icons depending on what you specify in the `resume.json` or what you choose to adjust within `variable.scss`. Some examples are listed below.
 
 ### Icons
 All the icons used in the theme are generated through [Font-Awesome](http://fontawesome.io/). So make sure the `network` key that you specify within your `profiles` json config matches the corresponding font-awesome style name. For example:
@@ -138,10 +133,10 @@ $primary-color          : $slate-green;
 The most important pieces of this environment are the two `app` and `gulp` folders as well as `index.ts`. If you've already read through the [jsonresume-theme-boilerplate](https://github.com/jsonresume/jsonresume-theme-boilerplate), you should know what the files within `/app` and `index.ts` represents.
 
 #### /app
-The app folder holds all of your assets. The file system should be straightforward to follow. All views will be under the `/views`  folder. Most importantantly, this folder which contains `resume.hbs`, which is the main Handlebars template that will be used and sent to the theme server to render your resume. The  `/styles` folder contains all of your SASS stylesheets.
+The app folder holds all of your assets. The file system should be straightforward to follow. All views will be under the `/views`  folder. Most unimportant, this folder which contains `resume.hbs`, which is the main Handlebars template that will be used and sent to the theme server to render your resume. The  `/styles` folder contains all of your SASS stylesheets.
 
 #### /gulp
 The gulp folder holds all the modularized gulp tasks/configs. Anything gulp related should go here. Please reference `gulpfile.xs` as the source of truth.
 
 #### index.ts
-This is the file that will return the HTML to the theme server and run against the resume-cli. Not much change here from the jsonresume-theme-boilerplate except that it has been modified to accomodate this file system.
+This is the file that will return the HTML to the theme server and run against the resume-cli. Not much change here from the jsonresume-theme-boilerplate except that it has been modified to accommodate this file system.

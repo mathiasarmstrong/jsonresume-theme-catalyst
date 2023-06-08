@@ -41,15 +41,15 @@
     "jest": "^29.5.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4",
-    "yaml": "^2.2.2"
+    "yaml": "^2.2.2",
+    "dotenv": "^16.0.3",
+    "sass": "^1.62.0",
+    "pug": "^3.0.2",
+    "puppeteer": "^19.11.1"
   },
   "dependencies": {
-    "dotenv": "^16.0.3",
     "luxon": "^3.3.0",
-    "pug": "^3.0.2",
-    "puppeteer": "^19.11.1",
     "resume-cli": "2.2.4",
-    "sass": "^1.62.0",
     "tinycolor": "^0.0.1"
   }
 }
