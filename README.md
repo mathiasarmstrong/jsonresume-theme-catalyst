@@ -65,11 +65,15 @@ Running the command above will automatically build your project, load your resum
 
 ## Creating your resume.json
 
-- [ ] this section needs to be worked on.  The resume-assets folder is a sample fodler of the resume assets.  Change as necessary.  Also worth noting instead of JSON i am using YAML because i like it better for this purpose.
-
-(also update this as I have added a bit of an extended syntax to json resume)
 Please review the [schema here](https://jsonresume.org/schema/) when creating your `resume.json`.
 
+### JSON Resume Extensions
+
+basics.qr_code
+basics.og_image
+basics.ga_tag
+basics.tagline
+work[].index
 
 ## Building the project
 When you run `yarn build` or choose to manually build the project using `gulp`, it will generate a `/public` folder. This folder will be created after running the appropritae gulp tasks against the `/app` folder. Essentially, the app folder is your development environment and the public folder will be what we deploy to production. The public folder is exactly the same as the public folder generated from the jsonresume-theme-boilerplate, thus, our `index.js` will still run against this folder. (this is for re-integration with resumecli)
