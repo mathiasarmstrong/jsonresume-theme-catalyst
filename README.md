@@ -126,7 +126,7 @@ $primary-color          : $slate-green;
 ```
 
 ## Developer Environment
-The most important pieces of this environment are the two `app` and `gulp` folders as well as `index.ts`. If you've already read through the [jsonresume-theme-boilerplate](https://github.com/jsonresume/jsonresume-theme-boilerplate), you should know what the files within `/app` and `index.ts` represents.
+The most important pieces of this environment are the two `app` and `gulp` folders as well as `resume.ts`. If you've already read through the [jsonresume-theme-boilerplate](https://github.com/jsonresume/jsonresume-theme-boilerplate), you should know what the files within `/app` and `resume.ts` represents.
 
 #### /app
 The app folder holds all of your assets. The file system should be straightforward to follow. All views will be under the `/views`  folder. Most unimportant, this folder which contains `resume.hbs`, which is the main Handlebars template that will be used and sent to the theme server to render your resume. The  `/styles` folder contains all of your SASS stylesheets.
@@ -134,5 +134,5 @@ The app folder holds all of your assets. The file system should be straightforwa
 #### /gulp
 The gulp folder holds all the modularized gulp tasks/configs. Anything gulp related should go here. Please reference `gulpfile.xs` as the source of truth.
 
-#### index.ts
+#### resume.ts
 This is the file that will return the HTML to the theme server and run against the resume-cli. Not much change here from the jsonresume-theme-boilerplate except that it has been modified to accommodate this file system.
