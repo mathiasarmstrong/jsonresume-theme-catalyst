@@ -8,7 +8,7 @@ import { imagesPath } from './gulp/images.js'
 
 const bs = browserSync.create("resume");
 
-// @ts-ignore
+
 const reload = done => {
   bs.reload();
   done();

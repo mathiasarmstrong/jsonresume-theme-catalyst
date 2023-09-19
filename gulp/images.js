@@ -10,8 +10,8 @@ const imageMinOptions = [
   optipng({optimizationLevel: 5}),
   svgo({
     plugins: [
-      {removeViewBox: true},
-      {cleanupIDs: false}
+      { name: 'removeViewBox', active: true },
+			{ name: 'cleanupIDs', active: false }
     ]
   })
 ]
@@ -34,6 +34,7 @@ export const images = async () =>
     return gulp.src(imagesPath)
       .pipe(gulpSize())
       .pipe(cache(imagemin(imageMinOptions)))
+      // .pipe(imagemin(imageMinOptions))
       .pipe(gulpSize())
       .pipe(gulp.dest('public/images'))
       .on('finish', resolve)

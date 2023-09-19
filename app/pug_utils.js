@@ -26,9 +26,7 @@ export const groupLangByFluency = (languages) => {
 }
 
 export const SKILL_RANK_FLUENCY_MAPPING = ['Legacy', 'Adept', 'Experimenting', 'Advanced', 'Expert']
-// export const SKILL_COLOR_RANK_MAPPING = ['#5bc0eb', '#5bc0eb', '#8f2d56', '#c4412a', '#ffb400']
-export const SKILL_COLOR_RANK_MAPPING = ['#252d2b', '#364e4a', '#407970', '#48aa99', '#48aa99']
-
+export const SKILL_COLOR_RANK_MAPPING = ['#48aa99', '#48aa99', '#48aa99', '#48aa99', '#48aa99']
 export const getFluencyRanking = fluencyLevel => SKILL_RANK_FLUENCY_MAPPING.map(
     (a) => a.toLowerCase()
   ).findIndex(
