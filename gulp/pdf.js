@@ -10,7 +10,7 @@ export const htmlToPdf = async () =>
       const page = await browser.newPage();
       await page.goto("file://" + file.path);
       await page._client().send('Animation.setPlaybackRate', { playbackRate: 1000 });
-
+      await page.waitForTimeout(1000);
       // https://pptr.dev/api/puppeteer.pdfoptions
       await page.pdf({
         path: 'public/' + path.basename(file.basename, ".html") + ".pdf",
