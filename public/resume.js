@@ -1,0 +1,3 @@
+console.log('follow the white rabbit...');
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc3VtZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLENBQUMsR0FBRyxDQUFDLDRCQUE0QixDQUFDLENBQUMiLCJmaWxlIjoicmVzdW1lLmpzIiwic291cmNlc0NvbnRlbnQiOlsiY29uc29sZS5sb2coJ2ZvbGxvdyB0aGUgd2hpdGUgcmFiYml0Li4uJyk7XG4iXX0=
