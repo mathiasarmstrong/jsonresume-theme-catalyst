@@ -1,7 +1,6 @@
 basics:
   profiles:
     - network: linkedin
-      icon: images/logos/upstart_logo.png
       username: jeredmccullough
       url: https://www.linkedin.com/in/jeredmccullough/
     - network: github 
@@ -10,9 +9,8 @@ basics:
   name: Jered McCullough
   location:
     address: San Francisco, California, United States
-    email: jered.mccullough@gmail.com
-    phone: 7078459114
-    website: linkedin.com/in/jeredmccullough
+  email: jered.mccullough@gmail.com
+  phone: 7078459114
   summary: |
     Jered McCullough is a seasoned software engineer with over 8 years of expertise in React, Typescript, Javascript, Ruby, and Python. His journey from Humboldt State University to international experiences in Ecuador and China has cultivated strong adaptability and cross-cultural communication skills. In roles at Upstart and Ampush, Jered has excelled in test-driven and agile development, mastering technologies like React, Typescript, Next.js, and more. Passionate about problem-solving, he brings a diverse skill set and a proven track record of contributing to innovative solutions.
 work:
@@ -78,11 +76,13 @@ skills:
     keywords: 
       - Webpack
       - Pug/SASS/LESS
-      - Node
       - React
       - Jquery
+  - name: Frontend
+    fluency: Advanced
+    keywords: 
+      - Node
       - NextJS
-
   - name: Backend
     fluency: Advanced
     keywords: 
