@@ -1,166 +1,129 @@
 basics:
-  name: Richard Hendriks
-  label: Programmer
-  qr_code: 'images/qr-code.png'
-  og_image: 'images/og-image.png'
-  picture: 'images/richard_hendricks.png'
-  email: r.hendriks@piedpiper.com
-  phone: (912) 555-4321
-  website: http://piedpiper.com
-  summary: Richard hails from Tulsa. He has earned degrees from the University of
-    Oklahoma and Stanford. (Go Sooners and Cardinals!) Before starting Pied Piper,
-    he worked for Hooli as a part time software developer. While his work focuses
-    on applied information theory, mostly optimizing lossless compression schema of
-    both the length-limited and adaptive variants, his non-work interests range widely,
-    everything from quantum computing to chaos theory. He could tell you about it,
-    but THAT would NOT be a length-limited conversation!
-  location:
-    address: Newell Road
-    postalCode: '94303'
-    city: Palo Alto
-    countryCode: US
-    region: CA
   profiles:
-  - network: twitter
-    username: siliconHBO
-    url: https://twitter.com/siliconHBO
-  - network: facebook
-    username: SiliconHBO
-    url: https://www.facebook.com/SiliconHBO
-  - network: instagram
-    username: siliconhbo
-    url: https://www.instagram.com/siliconhbo/
+    - network: linkedin
+      icon: images/logos/upstart_logo.png
+      username: jeredmccullough
+      url: https://www.linkedin.com/in/jeredmccullough/
+    - network: github 
+      username: mathiasarmstrong
+      url: https://github.com/mathiasarmstrong
+  name: Jered McCullough
+  location:
+    address: San Francisco, California, United States
+    email: jered.mccullough@gmail.com
+    phone: 7078459114
+    website: linkedin.com/in/jeredmccullough
+  summary: |
+    Jered McCullough is a seasoned software engineer with over 8 years of expertise in React, Typescript, Javascript, Ruby, and Python. His journey from Humboldt State University to international experiences in Ecuador and China has cultivated strong adaptability and cross-cultural communication skills. In roles at Upstart and Ampush, Jered has excelled in test-driven and agile development, mastering technologies like React, Typescript, Next.js, and more. Passionate about problem-solving, he brings a diverse skill set and a proven track record of contributing to innovative solutions.
 work:
-- name: Pied Piper
-  icon: images/logos/pied_piper_logo.png
-  position: CEO/President
-  website: http://piedpiper.com
-  startDate: 2014-04-13
-  summary: Pied Piper is a multi-platform technology based on a proprietary universal
-    compression algorithm that has consistently fielded high Weisman Scores™ that
-    are not merely competitive, but approach the theoretical limit of lossless compression.
-  highlights:
-  - Build an algorithm for artist to detect if their music was violating copy right
-    infringement laws
-  - Successfully won Techcrunch Disrupt
-  - Optimized an algorithm that holds the current world record for Weisman Scores
-- name: Hooli
-  position: Software Engineer
-  website: http://www.hooli.xyz/
-  startDate: 2013-01-01
-  endDate: 2014-04-06
-  icon: images/logos/hooli_logo.png
-  summary: Worked on optimizing the backend algorithms for Hooli
-volunteer:
-- organization: CoderDojo
-  position: Teacher
-  website: http://coderdojo.com/
-  startDate: 2012-01-01
-  endDate: 2013-01-01
-  summary: Global movement of free coding clubs for young people.
-  highlights:
-  - Awarded 'Teacher of the Month'
+  - name: Upstart
+    icon: images/logos/upstart_logo.png
+    position: L4 Software Engineer
+    startDate: 2019
+    endDate: 2023
+    duration: 3 years 10 months
+    summary: |
+      Upstart is a financial technology company that focuses on using artificial intelligence and machine learning to facilitate and streamline the lending process.
+    highlights: 
+      - Proficient in SDLC within complex compliance settings
+      - Executed complex refactoring for enterprise scaling and internal PaaS transition.
+      - Developed and implemented new UI/UX integration tools for a multi-platform application.
+      - Spearheaded the integration of language conversion using i18n technology
+      - Debugged and solved intricate 'chaos engineering' software issues.
+      - Led on-call rotations for swift incident resolution and system uptime.
+      - Initiated and guided the establishment of new teams within the company.
+      - Led project interview for new engineers as well as participated in manager interview panel.
+
+  - name: Ampush
+    icon: images/logos/ampush_logo.png
+    position: L2 Software Engineer
+    startDate: 2014
+    endDate: 2019
+    duration: 4 years 10 months
+    summary: |
+      Ampush is a digital marketing technology company that specializes in providing solutions for mobile advertising and customer acquisition.
+    highlights: 
+      - Helped construct a multimillion dollar enterprise application from inception to completion
+      - Utilized multiple of frameworks (angular + react) to create complex analytics dashboards for tracking and reporting in advertisement campaigns across multiple platforms
+      - Awarded facebook's Strategic Preferred Marketing Developer 2013
+
 education:
-- institution: Stanford
-  area: Computer Science
-  studyType: B.S
-  location: Palo Alto, C
-  specialization: Machine Learning
-  startDate: 2011-06-01
-  endDate: 2014-01-01
-  gpa: GPA 4.0
-  courses:
-  - DB1101 - Basic SQL
-  - CS2011 - Java Introduction
-awards:
-- title: Digital Compression Pioneer Award
-  date: 2014-11-01
-  awarder: Techcrunch
-  summary: There is no spoon.
-publications:
-- name: Video compression for 3d media
-  publisher: Hooli
-  releaseDate: 2014-10-01
-  website: http://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)
-  summary: Innovative middle-out compression algorithm that changes the way we store
-    data.
+  - institution: Humboldt State University (CalPoly, Humboldt)
+    icon: images/logos/humboldt_icon.png
+    area: Mathematics
+    studyType: B.A.
+    startDate: 2006
+    endDate: 2013
+    courses: 
+      - C++
+      - Advanced Abstract Mathematics
+
+  - institution: MakerSquare (HackReactor)  
+    icon: images/logos/makersquare_logo.png
+    area: Web Development
+    studyType: 3 Month
+    startDate: June 2014
+    endDate: Sep 2014
+    courses: []
+
 skills:
   - name: Git-Ops/IAC
-    level: Expert
-    keywords:
-      - K8
+    fluency: Expert
+    keywords: 
+      - Git
       - Docker
       - CI/CD
-      - Observability
-      - Git
-  - name: Experimenting
-    level: Experimenting
-    keywords:
-      - Solidity
-      - Substrate (blockchain)
-      - Rust
-      - VectorDBs
   - name: Frontend
-    level: Expert
-    keywords:
-      - React
-      - Pug/SASS
-      - Typescript
+    fluency: Expert
+    keywords: 
+      - Webpack
+      - Pug/SASS/LESS
       - Node
-      - Express
+      - React
+      - Jquery
+      - NextJS
+
   - name: Backend
-    level: Expert
-    keywords:
-      - Python
-      - Ruby
-      - GRPC
-      - Kafka
-      - Protobuf
-      - ETL Pipeline
-      - pSql/noSql
-      - Redis
-      - TSDBs
-  - name: Project Management
-    level: Advanced
-    keywords:
-      - Agile/Kanban
-      - Scrum Master
-      - Jira
-      - Sheets/Excel
-      - Task Decomposition
-  - name: Technical Design
-    level: Advanced
-    keywords:
-      - UML/C4
-      - DDD
-      - EA
-      - TOGAF
+    fluency: Advanced
+    keywords: 
+      - Rails
+      - Node
+      - Flask
+
+  - name: Cloud
+    fluency: Experimenting
+    keywords: 
+      - Docker
+      - AWS
+
 languages:
+  - language: HTML
+    fluency: Expert
+  - language: SASS/CSS
+    fluency: Expert
+  - language: JavaScript
+    fluency: Expert 
   - language: Typescript
     fluency: Expert
+  - language: Ruby
+    fluency: Advanced
   - language: Python
-    fluency: Expert
+    fluency: Advanced
   - language: Bash/Shell
     fluency: Advanced
-  - language: Ruby
-    fluency: Expert
-  - language: Kotlin
-    fluency: Experimenting
-  - language: Rust
-    fluency: Experimenting
-  - language: Java
-    fluency: Legacy
-  - language: C++
-    fluency: Legacy
-  - language: MIPS
-    fluency: Legacy
-  - language: SASS/CSS
+  - language: Node.js
     fluency: Advanced
-interests:
-- name: Wildlife
-  keywords:
-  - Ferrets
-  - Unicorns
-references:
-- name: Erlich Bachman
-  reference: It is my pleasure to recommend Richard. That is all.
+  # - language: C++
+  #   fluency: experimenting
+  # - language: C++
+  #   fluency: legacy
+
+awards: []
+
+publications: []
+
+volunteer: []
+
+interests: []
+
+references: []
